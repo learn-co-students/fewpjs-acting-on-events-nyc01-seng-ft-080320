@@ -33,10 +33,13 @@ document.addEventListener('keydown', function(e){
 })
 
 function moveDodgerUp(){
+    // get the current location of the item along the y axis and remove the px
     let bottomNumbers = dodger.style.bottom.replace('px', '');
+    // convert the result of bottomNumbers to a number we can use by parsing it
     let bottom = parseInt(bottomNumbers, 10)
 
     if(bottom < 380){
+        // reset bottom to the current bottom plus the number of pixels we want to increment by and add back in the px
         dodger.style.bottom = `${bottom + 5}px`
     };
 }
